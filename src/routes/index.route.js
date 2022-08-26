@@ -1,6 +1,6 @@
-const express = require('express');
-const cars = require('./cars.route');
-const accounts = require('./accounts.route');
+import express from 'express';
+import cars from './cars.route.js';
+import accounts from './accounts.route.js';
 
 const router = express.Router();
 
@@ -17,4 +17,4 @@ router.get('/health', (req, res) => {
   res.send(JSON.stringify(healthcheck));
 });
 
-module.exports = router;
+export default router;

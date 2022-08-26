@@ -1,13 +1,12 @@
-const data = require('../data');
-
-const carsService = require('./cars.service');
+import data from '../data.js';
+import carsService from './cars.service.js';
 
 const getAll = function (req) {
   const cars = carsService.getAll();
 
   const car_ids = data.Accounts_Cars
     .filter(
-      (row) => row.Account_id === req.params.Account_id,
+      (row) => row.Account_id === parseInt(req.params.Account_id),
     ).map(
       (row) => row.Car_id,
     );
@@ -16,10 +15,10 @@ const getAll = function (req) {
 };
 
 const get = function (req) {
-  return getAll(req).find((car) => car._id === req.params._id);
+  return getAll(req).find((car) => car._id === parseInt(req.params._id));
 };
 
-module.exports = {
+export default {
   get,
   getAll,
 };

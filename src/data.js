@@ -1,4 +1,4 @@
-module.exports = {
+export default {
   Accounts: [
     {
       _id: '0',

@@ -1,14 +1,14 @@
-const data = require('../data');
+import data from '../data.js';
 
 const getAll = function () {
   return data.Accounts;
 };
 
 const get = function (_id) {
-  return getAll().find((account) => account._id === _id);
+  return getAll().find((account) => account._id === parseInt(_id));
 };
 
-module.exports = {
+export default {
   get,
   getAll,
 };

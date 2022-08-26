@@ -1,13 +1,9 @@
-const express = require('express');
+import express from 'express';
+import carsController from '../controllers/cars.controller.js';
 
 const router = express.Router({ mergeParams: true });
 
-const carsController = require('../controllers/cars.controller');
+router.route('/:_id').get(carsController.get);
+router.route('/').get(carsController.getAll);
 
-router.route('/')
-  .get(carsController.getAll);
-
-router.route('/:_id')
-  .get(carsController.get);
-
-module.exports = router;
+export default router;
