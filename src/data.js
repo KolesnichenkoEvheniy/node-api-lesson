@@ -8,7 +8,7 @@ module.exports = {
       },
       email: 'deidre.hayes@undefined.me',
       phone: '+1 (839) 577-3100',
-      address: '507 Church Avenue, Heil, Wyoming, 1754',
+      address: "507 Church Avenue, Heil, Wyoming, 1754",
     },
     {
       _id: '1',
