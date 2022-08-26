@@ -6,16 +6,17 @@ const app = express();
 app.use(cors());
 
 const routes = require('./routes/index.route');
+
 app.use(routes);
 
 // catch 404 and forward to error handler
-app.use(function (req, res, next) {
+app.use((req, res, next) => {
   const err = new Error('Not Found!');
   err.status = 404;
   next(err);
 });
 
-app.use(function (err, req, res, next) {
+app.use((err, req, res) => {
   console.log(err.stack);
 
   res.status(err.status || 500);
@@ -29,8 +30,8 @@ app.use(function (err, req, res, next) {
 });
 
 // start http server
-var server = app.listen(process.env.PORT || 3000, function () {
-  console.log('Listening on port ' + server.address().port);
+const server = app.listen(process.env.PORT || 3000, () => {
+  console.log(`Listening on port ${server.address().port}`);
 });
 
 module.exports = { app };

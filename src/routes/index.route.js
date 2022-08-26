@@ -10,9 +10,9 @@ router.use('/accounts', accounts);
 router.get('/', (req, res) => res.send('Sample Node API Version1'));
 router.get('/health', (req, res) => {
   const healthcheck = {
-		uptime: process.uptime(),
-		message: 'OK',
-		timestamp: Date.now()
+    uptime: process.uptime(),
+    message: 'OK',
+    timestamp: Date.now(),
   };
   res.send(JSON.stringify(healthcheck));
 });
