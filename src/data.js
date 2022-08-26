@@ -36,7 +36,6 @@ export default {
       _id: 0,
       Name: 'chevrolet chevelle malibu',
       Miles_per_Gallon: 118,
-      Cylinders: 8,
     },
     {
       _id: 1,

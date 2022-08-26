@@ -5,11 +5,8 @@ const getAll = function (req) {
   const cars = carsService.getAll();
 
   const car_ids = data.Accounts_Cars
-    .filter(
-      (row) => row.Account_id === parseInt(req.params.Account_id),
-    ).map(
-      (row) => row.Car_id,
-    );
+      .filter(row => row.Account_id === parseInt(req.params.Account_id),)
+      .map(row => row.Car_id);
 
   return cars.filter((car) => car_ids.includes(car._id));
 };
