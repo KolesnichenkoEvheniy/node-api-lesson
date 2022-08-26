@@ -3,6 +3,7 @@
 
 Just a simple project to demonstrate api made with node.js 
 
+[![build-test](https://github.com/KolesnichenkoEvheniy/node-api-lesson/actions/workflows/build_test.yml/badge.svg)](https://github.com/KolesnichenkoEvheniy/node-api-lesson/actions/workflows/build_test.yml)
 
 ## Run Locally
 
