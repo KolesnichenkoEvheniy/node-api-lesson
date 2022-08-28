@@ -1,5 +1,5 @@
 import express from 'express';
-import accountsCarsController from '../controllers/accountsCars.controller.js';
+import categoryProductsController from '../controllers/CategoryProductsController.js';
 
 const router = express.Router({ mergeParams: true });
 
@@ -7,8 +7,8 @@ const router = express.Router({ mergeParams: true });
 // un-comment this to implement two new routes
 // accounts/:id/cars & accounts/:id/cars/:id2
 
-router.route('/cars').get(accountsCarsController.getAll);
+router.route('/products').get(categoryProductsController.getAll);
 
-router.route('/cars/:_id').get(accountsCarsController.get);
+router.route('/products/:id').get(categoryProductsController.get);
 
 export default router;

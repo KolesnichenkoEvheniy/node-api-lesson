@@ -1,68 +1,50 @@
 export default {
-  Accounts: [
+  Categories: [
     {
-      _id: '0',
-      name: {
-        first: 'Deidre',
-        last: 'Hayes',
-      },
-      email: 'deidre.hayes@undefined.me',
-      phone: '+1 (839) 577-3100',
-      address: '507 Church Avenue, Heil, Wyoming, 1754',
+      _id: 0,
+      name: 'Expensive products',
     },
     {
-      _id: '1',
-      name: {
-        first: 'Maldonado',
-        last: 'Sellers',
-      },
-      email: 'maldonado.sellers@undefined.biz',
-      phone: '+1 (834) 573-2841',
-      address: '286 Hewes Street, Abiquiu, Maine, 2447',
+      _id: 1,
+      name: 'Interesting products',
     },
     {
-      _id: '2',
-      name: {
-        first: 'Elvia',
-        last: 'Aguilar',
-      },
-      email: 'elvia.aguilar@undefined.io',
-      phone: '+1 (826) 486-2932',
-      address: '457 Buffalo Avenue, Caberfae, Connecticut, 2648',
+      _id: 2,
+      name: 'Boring products',
     },
   ],
-  Cars: [
+  Products: [
     {
       _id: 0,
       Name: 'chevrolet chevelle malibu',
-      Miles_per_Gallon: 118,
+      price: 100500,
     },
     {
       _id: 1,
-      Name: 'buick skylark 320',
-      Miles_per_Gallon: 15,
+      Name: 'iPhone',
+      price: 1000,
     },
     {
       _id: 2,
-      Name: 'plymouth satellite111',
-      Miles_per_Gallon: 181,
+      Name: 'Test product',
+      price: 50,
     },
   ],
-  Accounts_Cars: [
+  CategoryProducts: [
     {
       _id: 0,
-      Account_id: 0,
-      Car_id: 0,
+      CategoryId: 2,
+      ProductId: 0,
     },
     {
       _id: 1,
-      Account_id: 0,
-      Car_id: 1,
+      CategoryId: 2,
+      ProductId: 1,
     },
     {
       _id: 2,
-      Account_id: 1,
-      Car_id: 2,
+      CategoryId: 1,
+      ProductId: 2,
     },
   ],
 };

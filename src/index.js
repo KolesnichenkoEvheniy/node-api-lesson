@@ -1,6 +1,6 @@
 import express from 'express';
 import cors from 'cors';
-import routes from './routes/index.route.js';
+import routes from './routes/indexRoute.js';
 
 // setup app & its routes
 const app = express();
@@ -15,7 +15,8 @@ app.use((req, res, next) => {
   next(err);
 });
 
-app.use((err, req, res) => {
+// eslint-disable-next-line no-unused-vars
+app.use((err, req, res, next) => {
   console.log(err.stack);
 
   res.status(err.status || 500);
@@ -29,8 +30,4 @@ app.use((err, req, res) => {
 });
 
 // start http server
-const server = app.listen(process.env.PORT || 3000, () => {
-  console.log(`Listening on port ${server.address().port}`);
-});
-
-export default { app };
+const server = app.listen(3000, () => console.log(`Listening on port ${server.address().port}`));
