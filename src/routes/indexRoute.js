@@ -7,6 +7,10 @@ const router = express.Router();
 router.use('/products', products);
 router.use('/categories', categories);
 
-router.get('/', (req, res) => res.send('Sample Node API Version'));
+router.get('/', (req, res) => {
+  res.json({
+    message: 'Sample Node API Version',
+  });
+});
 
 export default router;

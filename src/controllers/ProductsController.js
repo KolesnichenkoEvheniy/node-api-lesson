@@ -7,11 +7,11 @@ const get = function (req, res) {
     throw new Error('Product not Found!');
   }
 
-  res.send(product);
+  res.json(product);
 };
 
 const getAll = function (req, res) {
-  res.send(productsService.getAll());
+  res.json(productsService.getAll());
 };
 
 export default {
