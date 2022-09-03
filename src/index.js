@@ -6,6 +6,11 @@ import routes from './routes/indexRoute.js';
 const app = express();
 app.use(cors());
 
+app.get('/test', function (req, res) {
+  console.log(req.query)
+  res.send('Hello! Today is: ' + (new Date().toString()));
+})
+
 app.use(routes);
 
 // catch 404 and forward to error handler
