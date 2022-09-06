@@ -1,12 +1,16 @@
 import express from 'express';
 import cors from 'cors';
 import routes from './routes/indexRoute.js';
-import handleErrors from './core/handleErrors.js';
-import throwAnErrorOnMissingRoute from './core/throwAnErrorOnMissingRoute.js';
+import handleErrors from './core/middleware/handleErrors.js';
+import throwAnErrorOnMissingRoute from './core/middleware/throwAnErrorOnMissingRoute.js';
+import checkToken from './core/middleware/auth/checkToken.js';
 
 // setup app & its routes
 const app = express();
 app.use(cors());
+
+const availableTokens = ['top-secret', '$secret'];
+app.use(checkToken(availableTokens));
 
 app.get('/test', (req, res) => {
   console.log(req.query);
@@ -15,8 +19,8 @@ app.get('/test', (req, res) => {
 
 app.use(routes);
 
-app.use(throwAnErrorOnMissingRoute);
 app.use(handleErrors);
+app.use(throwAnErrorOnMissingRoute);
 
 // start http server
 const server = app.listen(3000, () => {
