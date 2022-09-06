@@ -1,7 +1,9 @@
 import categoriesService from '../services/CategoriesService.js';
 
 const getRandom = function (req, res) {
-  const length = 6
+  const length = req.query.length ?? 6;
+  console.log(req.query)
+
   res.json({
     'number': Math.random() * length
   });
