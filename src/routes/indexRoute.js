@@ -14,6 +14,6 @@ router.get('/', (req, res) => {
   });
 });
 
-router.get('/random', RandomController.getRandom)
+router.get('/random', RandomController.getRandom);
 
 export default router;
