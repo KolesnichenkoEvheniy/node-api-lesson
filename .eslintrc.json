@@ -17,6 +17,7 @@
         "no-console": "off",
         "camelcase": "warn",
         "import/extensions": "off",
-        "radix": "off"
+        "radix": "off",
+        "import/prefer-default-export": "off"
     }
 }

@@ -2,6 +2,8 @@ import express from 'express';
 import products from './productsRoute.js';
 import categories from './categoriesRoute.js';
 import RandomController from '../controllers/RandomController.js';
+import checkToken from '../core/middleware/auth/checkToken.js';
+import { availableTokens } from '../config.js';
 
 const router = express.Router();
 
@@ -14,6 +16,6 @@ router.get('/', (req, res) => {
   });
 });
 
-router.get('/random', RandomController.getRandom);
+router.get('/random', checkToken(availableTokens), RandomController.getRandom);
 
 export default router;
