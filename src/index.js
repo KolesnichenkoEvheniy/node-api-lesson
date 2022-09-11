@@ -15,8 +15,8 @@ app.get('/test', (req, res) => {
 
 app.use(routes);
 
-app.use(handleErrors);
 app.use(throwAnErrorOnMissingRoute);
+app.use(handleErrors);
 
 // start http server
 const server = app.listen(3000, () => {
